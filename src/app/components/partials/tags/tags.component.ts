@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FoodService } from 'src/app/services/food.service';
 import { Tag } from 'src/app/shared/models/Tag';
 
@@ -9,11 +10,16 @@ import { Tag } from 'src/app/shared/models/Tag';
 })
 export class TagsComponent implements OnInit {
   tags?:Tag[];
-  constructor(foodService:FoodService) {
+  peepsSelect:any="All (9)";
+  peepSelect:any="All (9)";
+  constructor(foodService:FoodService, private router:Router) {
     this.tags = foodService.getAllTags();
+    
    }
 
   ngOnInit(): void {
   }
-
+  onSelect(event:any){
+    this.router.navigate([`tag/${(event)}`]);
+  }
 }

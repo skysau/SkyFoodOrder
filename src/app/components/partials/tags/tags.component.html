@@ -1,6 +1,12 @@
-<div *ngIf="tags">
+<!-- <div *ngIf="tags">
   <a *ngFor="let tag of tags" routerLink="/tag/{{tag.name}}">
     {{tag.name}}({{tag.count}})
   </a>
-</div>
+</div> -->
 
+<select class="dropdown" placeholder="All (9)" id='peeps' name='people' [(ngModel)]="peepsSelect" (change)="onSelect(peepsSelect)">
+  <option [ngValue]="peepSelect" selected disabled class="fa-solid fa-filter"> ADD FILTER</option>
+  <option *ngFor="let item of tags" [value]="item.name">
+      Filter: {{item.name}} ({{item.count}})
+  </option>    
+</select>

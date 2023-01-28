@@ -1,5 +1,9 @@
-<app-search></app-search>
-<app-tags></app-tags>
+<div class="search ">
+  <div><app-tags></app-tags></div>
+  <div><app-search></app-search></div>
+  
+</div>
+
 <app-not-found
 [visible]="!foods || !foods.length"
 resetLinkText="Reset Search">
