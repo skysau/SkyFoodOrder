@@ -1,11 +1,39 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "62ae0110-baec-4ee3-9b75-042207893b4c"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SkyFoodOrder": {
+    "skyFoodOrder": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +41,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sky-food-order",
+            "outputPath": "dist/skyFoodOrder",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +92,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SkyFoodOrder:build:production"
+              "browserTarget": "skyFoodOrder:build:production"
             },
             "development": {
-              "browserTarget": "SkyFoodOrder:build:development"
+              "browserTarget": "skyFoodOrder:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +103,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SkyFoodOrder:build"
+            "browserTarget": "skyFoodOrder:build"
           }
         },
         "test": {
@@ -97,5 +125,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "skyFoodOrder"
 }
